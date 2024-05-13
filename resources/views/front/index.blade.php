@@ -6,7 +6,7 @@
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
             @foreach($sliders as $slider)
-            <div class="carousel-item active">
+            <div class="carousel-item @if($loop->last)active @endif">
                 <img class="w-100" src="{{$slider->getFirstMediaUrl('avatar')}}" alt="Image">
                 <div class="carousel-caption">
                     <div class="container">
