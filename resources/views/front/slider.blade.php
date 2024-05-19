@@ -44,7 +44,7 @@
                 @foreach($slider->machines as $machine)
                 <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="factory-image">
-                        <img class="img-fluid" src="{{$slider->getFirstMediaUrl('avatar')}}" alt="">
+                        <img class="img-fluid" src="{{$machine->getFirstMediaUrl('avatar')}}" alt="">
                         <h3 class="text-center mt-2">{{$machine->name}}</h3>
                     </div>
                 </div>
