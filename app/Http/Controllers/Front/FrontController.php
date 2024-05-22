@@ -14,6 +14,7 @@ use App\Models\Certificate;
 use App\Models\Client;
 use App\Models\Product;
 use App\Models\Slider;
+use App\Models\SubProduct;
 
 class FrontController extends Controller
 {
@@ -57,5 +58,9 @@ class FrontController extends Controller
     public function sliderPage($id){
         $slider = Slider::findOrFail($id);
         return view('front.slider',compact('slider'));
+    }
+    public function getSubProducts($id){
+       $subProducts = SubProduct::where('product_id',$id)->get();
+       return view('front.subProducts',compact('subProducts'));
     }
 }

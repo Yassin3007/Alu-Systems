@@ -25,7 +25,7 @@
                                 <hr class="w-25">
                             </div>
                         </div>
-                        <a class="btn btn-light" href="">{{__('index.Read More')}}</a>
+                        <a class="btn btn-light" href="{{route('getSubProducts',$product->id)}}">{{__('index.Read More')}}</a>
                     </div>
                 </div>
                 @endforeach

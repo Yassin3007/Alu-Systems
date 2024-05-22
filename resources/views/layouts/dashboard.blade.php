@@ -177,6 +177,15 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('sub-products.index')}}" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                 المنتجات الفرعية
+{{--                <span class="badge badge-info right">2</span>--}}
+              </p>
+            </a>
+          </li>
 
 
           <li class="nav-item">

@@ -143,7 +143,7 @@ return [
     
     'Follow Us' => 'Follow Us', 
     'Our Office' => 'Our Office', 
-    '' => '', 
+    'More Products' => 'More Products', 
     '' => '', 
     '' => '', 
     '' => '', 

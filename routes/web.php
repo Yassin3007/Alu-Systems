@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\SubProductController;
 use App\Models\Category;
 use App\Models\Client;
 use App\Models\Slider;
@@ -48,6 +49,7 @@ Route::group(
     	Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
             Route::resource('projects',ProjectController::class);
             Route::resource('categories',CategoriesController::class);
+            Route::resource('sub-products',SubProductController::class);
             Route::resource('clients',ClientController::class);
             Route::resource('partner',PartnerController::class);
             Route::resource('products',ProductController::class);
@@ -96,6 +98,7 @@ Route::group(
 
         Route::get('projects',[FrontController::class, 'projects'])->name('projects');
         Route::get('products',[FrontController::class, 'products'])->name('products');
+        Route::get('get-sub-products/{id}',[FrontController::class, 'getSubProducts'])->name('getSubProducts');
         Route::get('certificates',[FrontController::class, 'certificates'])->name('certificates');
         Route::get('partners',[FrontController::class, 'partners'])->name('partners');
 

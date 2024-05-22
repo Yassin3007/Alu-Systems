@@ -30,14 +30,13 @@
 
           <div class="card">
             <div class="card-header d-flex" style="text-align: center;">
-              <h3 class="card-title" >تعديل </h3>
+              <h3 class="card-title" >اضافة منتج فرعي</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <div class="container">
-                <form method="POST" action="{{route('categories.update',$category->id)}}" enctype="multipart/form-data">
+                <form method="POST" action="{{route('sub-products.store')}}" enctype="multipart/form-data">
                   @csrf
-                  @method('PUT')
                   @if ($errors->any())
                <div class="alert alert-danger">
                    <ul>
@@ -50,11 +49,11 @@
                   <div class="row">
                     <div class="col-md-6">
                       <label for="field1">الاسم  باللغة العربية </label>
-                      <input type="text" name="name_ar" value="{{$category->getTranslation('name', 'ar')}}" class="form-control" id="field1">
+                      <input type="text" name="name_ar" value="{{old('name_ar')}}" class="form-control" id="field1">
                     </div>
                     <div class="col-md-6">
-                      <label for="field2"> الاسم  باللغة الانجليزية</label>
-                      <input type="text" name="name_en" value="{{$category->getTranslation('name', 'en')}}" class="form-control" id="field2">
+                      <label for="field2"> الاسم باللغة الانجليزية</label>
+                      <input type="text" name="name_en" value="{{old('name_en')}}" class="form-control" id="field2">
                     </div>
                    
                   </div>
@@ -64,14 +63,16 @@
                  
                   <div class="row">
                     <div class="col-md-12">
-                      <label for="field4"> التفاصيل  باللغة العربية </label>
+                      <label for="field4"> التفاصيل  باللغة العربية</label>
+
                       <div class="card-body pad">
                         <div class="mb-3">
                           <textarea class="textarea" name="description_ar" placeholder="Place some text here"
-                                    style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{$category->getTranslation('data', 'ar')}}</textarea>
+                                    style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                         </div>
                        
                       </div> 
+                    
                     </div>
                    
                   </div>
@@ -80,42 +81,36 @@
                   <div class="row">
                     <div class="col-md-12">
                       <label for="field4"> التفاصيل  باللغة الانجليزية</label>
-                     <div class="card-body pad">
+                      <div class="card-body pad">
                         <div class="mb-3">
                           <textarea class="textarea" name="description_en" placeholder="Place some text here"
-                                    style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{$category->getTranslation('data', 'en')}}</textarea>
+                                    style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                         </div>
                        
-                      </div>           
+                      </div>                     
                     </div>
                    
                   </div>
                   <br>
-                 
                   <div class="row">
                     <div class="col-md-6">
-                      <label for="field1"> الصورة   </label>
-                      <input type="file" name="image" accept="image/*" class="form-control"  id="field1">
+                      <label for="field1">الصورة       </label>
+                      <input type="file" name="image" accept="image/*" multiple class="form-control" id="field1">
                     </div>
+
+                    
                     <div class="col-md-6">
-                      <label for="field1">المشاريع  </label>
-                      <select name="projects[]" multiple id="project_id" class="form-control">
-                        @foreach($projects as $project)
-                          <option value="{{ $project->id }}" @if($project->category_id == $category->id)selected @endif> {{ $project->name }} </option>
+                      <label for="field1">المنتج الرئيسي  </label>
+                      <select name="product_id"  id="product_id" class="form-control">
+                        @foreach($products as $product)
+                          <option value="{{ $product->id }}"> {{ $product->name }} </option>
                         @endforeach
                       </select>
                     </div>
-                  </div>
-                  <br>
-                  <div class="row">
-                    <div class="col-md-6">
-                      
-                      <img width="200px" src="{{$category->getFirstMediaUrl('avatar')}}">
-                    </div>
                    
                   </div>
                   <br>
-                
+                  
                   <br>
                   <button type="submit" class="btn btn-primary">تأكيد</button>
                 </form>
