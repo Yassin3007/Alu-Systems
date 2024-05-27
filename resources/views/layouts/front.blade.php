@@ -77,7 +77,7 @@
                 <a href="{{route('index')}}" class="nav-item nav-link active">{{__('index.home')}}</a>
                 <a href="{{route('about')}}" class="nav-item nav-link">{{__('index.About')}}</a>
                 <a href="{{route('products')}}" class="nav-item nav-link">{{__('index.Products')}}</a>
-                <a href="{{route('projects')}}" class="nav-item nav-link">{{__('index.Projects')}}</a>
+                <a href="{{route('projects')}}" class="nav-item nav-link">{{__('index.OurProjects')}}</a>
                 <a href="{{route('partners')}}" class="nav-item nav-link">{{__('index.Our Partners')}}</a>
                 <a href="{{route('certificates')}}" class="nav-item nav-link">{{__('index.Certificates')}}</a>
                 <a href="{{route('contact')}}" class="nav-item nav-link">{{__('index.Contact Us')}}</a>

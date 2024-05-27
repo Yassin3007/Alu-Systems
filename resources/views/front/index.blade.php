@@ -43,7 +43,7 @@
             <div class="col-lg-5">
                 <div class="row gx-3 h-100">
                     <div class="col-12 align-self-center wow fadeInDown" data-wow-delay="0.1s">
-                        <img class="img-fluid about-img" src="{{asset('front/img/about-home.jpeg')}}">
+                        <img class="img-fluid about-img" src="{{asset('front/img/story.jpg')}}">
                     </div>
                 </div>
             </div>
