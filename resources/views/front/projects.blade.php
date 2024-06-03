@@ -16,7 +16,7 @@
         @foreach($projects as $project)
 
             <div class="col-lg-4 col-md-6 project">
-                <a href="kafd-2.08.html">
+                <a href="{{route('getProject',$project->id)}}">
                     <img src="{{$project->media->first()->getUrl()}}" alt="">
                     <span>{{$project->name}}</span>
                 </a>
